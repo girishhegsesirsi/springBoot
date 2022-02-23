@@ -1,0 +1,55 @@
+server:
+    port: 8082
+spring:
+    config:
+      activate.on-profile: dev
+    datasource:
+        driverClassName: com.mysql.jdbc.Driver
+        password: Girish
+        url: jdbc:mysql://localhost:3306/sbdemo
+        username: root
+    jpa:
+        hibernate:
+            ddl-auto: update
+        show-sql: true
+welcome:
+    message: Hi Hello Welcome!!!
+management:
+   endpoints:
+    web:
+      exposure:
+        include: "*"   
+---
+    
+server:
+    port: 8082
+spring:
+    profiles: qa
+    datasource:
+        driverClassName: com.mysql.jdbc.Driver
+        password: Girish
+        url: jdbc:mysql://localhost:3306/sbdemo_qa
+        username: root
+    jpa:
+        hibernate:
+            ddl-auto: update
+        show-sql: true
+welcome:
+    message: Hi Hello Welcome!!!
+    
+---
+server:
+    port: 8082
+spring:
+    profiles: prod
+    datasource:
+        driverClassName: com.mysql.jdbc.Driver
+        password: Girish
+        url: jdbc:mysql://localhost:3306/sbdemo_prod
+        username: root
+    jpa:
+        hibernate:
+            ddl-auto: update
+        show-sql: true
+welcome:
+    message: Hi Hello Welcome!!!
